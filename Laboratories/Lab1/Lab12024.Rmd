@@ -1,0 +1,135 @@
+---
+title: "Lab12024"
+author: "Taylor Wise"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tasks
+
+Tasks for lab 1
+
+## Task 1
+
+```{r}
+getwd()
+```
+## Task 2
+```{r}
+ddt <- read.csv("DDT.csv")
+head(ddt)
+```
+
+## Task 3
+```{r}
+names(ddt)
+```
+
+RIVER, SPECIES = Qualitative
+
+MILE, LENGTH, WEIGHT, DDT = Quantitative
+
+```{r}
+tab <- table(ddt$SPECIES)
+tab
+```
+
+Number of Species = 3
+The species are CCATFISH, LMBASS, and SMBUFFALO
+
+```{r}
+ddt[ddt$SPECIES == "LMBASS" & ddt$WEIGHT > 800,]
+```
+
+```{r}
+ddt[ddt$RIVER == "SCM" & ddt$DDT > 4.0,]
+```
+
+## Task 4
+```{r}
+mean(ddt$LENGTH)
+```
+
+```{r}
+sd(ddt$WEIGHT)
+```
+
+```{r}
+plot(ddt$WEIGHT, ddt$LENGTH, xlab="WEIGHT", ylab="LENGTH", col="red")
+```
+
+Q3. 0
+
+Q4.
+```{r}
+v=1:20
+print(v/20)
+```
+
+
+## Task 5
+```{r}
+table(ddt$RIVER)
+```
+
+```{r}
+barplot(table(ddt$RIVER), col = c("darkseagreen3", "lightsteelblue3", "burlywood3", "rosybrown3"))
+```
+
+```{r}
+table(ddt$SPECIES,ddt$RIVER)
+```
+
+```{r}
+barplot(table(ddt$SPECIES,ddt$RIVER), col = c("darkseagreen3", "lightsteelblue3", "burlywood3", "rosybrown3"), beside=TRUE)
+```
+
+## Task 6
+```{r}
+pie(table(ddt$SPECIES), col = c("rosybrown3", "burlywood3", "lightsteelblue3"))
+```
+
+```{r}
+pie(table(ddt$RIVER), col = c("darkseagreen3", "rosybrown3", "burlywood3", "lightsteelblue3"))
+```
+
+
+## Task 7
+```{r}
+boxplot(ddt$DDT, data=ddt)
+```
+
+```{r}
+boxplot(ddt$WEIGHT, data=ddt)
+```
+
+```{r}
+boxplot(ddt$LENGTH, data=ddt)
+```
+
+## Task 8
+```{r}
+coplot(WEIGHT~LENGTH|RIVER, data=ddt, col=c("darkseagreen3", "rosybrown3", "burlywood3", "lightsteelblue3"))
+```
+
+```{r}
+coplot(WEIGHT~DDT|SPECIES, data=ddt, col=c("darkseagreen3", "rosybrown3", "burlywood3", "lightsteelblue3"))
+```
+
+## Task 9
+```{r}
+library(ggplot2)
+ggplot(ddt, aes(x=SPECIES, y=WEIGHT, fill=RIVER,)) + geom_boxplot(col="black") + ggtitle("Taylor Wise")
+```
+
+```{r}
+library(ggplot2)
+ggplot(ddt, aes(x=RIVER, y=LENGTH, fill=SPECIES,)) + geom_violin(col="black") + ggtitle("Taylor Wise")
+```
+
+
+
