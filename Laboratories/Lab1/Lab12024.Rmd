@@ -1,8 +1,11 @@
 ---
-title: "Lab12024"
+title: "Lab 1"
 author: "Taylor Wise"
 date: "`r Sys.Date()`"
-output: html_document
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -130,6 +133,3 @@ ggplot(ddt, aes(x=SPECIES, y=WEIGHT, fill=RIVER,)) + geom_boxplot(col="black") +
 library(ggplot2)
 ggplot(ddt, aes(x=RIVER, y=LENGTH, fill=SPECIES,)) + geom_violin(col="black") + ggtitle("Taylor Wise")
 ```
-
-
-
