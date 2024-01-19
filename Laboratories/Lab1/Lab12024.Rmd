@@ -57,13 +57,30 @@ ddt[ddt$RIVER == "SCM" & ddt$DDT > 4.0,]
 mean(ddt$LENGTH)
 ```
 
+<!--
+L <- ddt$LENGTH
+mean(L)
+
+Same result
+-->
+
 ```{r}
 sd(ddt$WEIGHT)
 ```
 
+<!--
+with(ddt,plot(WEIGHT,LENGTH))
+
+is the same thing as below
+-->
+
 ```{r}
 plot(ddt$WEIGHT, ddt$LENGTH, xlab="WEIGHT", ylab="LENGTH", col="red")
 ```
+
+<!--
+Y versus X s.t. Length is the y-axis and Weight is the x-axis
+-->
 
 Q3. 0
 
