@@ -1,0 +1,30 @@
+---
+title: "Quiz1"
+author: "Taylor Wise"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Quiz 1
+
+```{r}
+ddt <- read.csv(file.choose())
+head(ddt)
+```
+
+```{r}
+ddt[1,2]
+```
+
+# First row, second column^
+
+```{r}
+ddt[ddt$RIVER == "FCM",]
+```
+
+```{r}
+ddt[ddt$RIVER == "FCM" & ddt$WEIGHT > 1200,]

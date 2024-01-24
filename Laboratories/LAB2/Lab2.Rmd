@@ -1,0 +1,83 @@
+---
+title: "Lab2"
+author: "Taylor Wise"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tasks
+
+## Task 1
+Get the working directory
+```{r}
+getwd()
+```
+
+## Task 2
+Read in data and obtain first 6 lines of data
+```{r}
+epagas <- read.csv("EPAGAS.csv")
+head(epagas)
+```
+
+## Task 3
+Make the object mpg, the number of miles per gallon vector
+```{r}
+mpg = epagas$MPG
+head(mpg)
+```
+
+Transform the mpg variable to z
+```{r}
+z = (mpg - mean(mpg)) / sd(mpg)
+head(z)
+```
+
+Verify z
+```{r}
+
+```
+
+Possible outliers
+```{r}
+mpg[abs(z) >= 2 & abs(z) <= 3]
+```
+
+Actual outliers
+```{r}
+mpg[abs(z) > 3]
+```
+
+Dotplot
+```{r}
+mpgcol = ifelse(abs(z) > 3, "red", ifelse(abs(z) >= 2 & abs(z) <= 3, "blue", "black"))
+
+library(lattice)
+dotplot(mpg, col = mpgcol, main = "Plot of mpg values")
+```
+
+## Task 4
+Boxplot of mpg
+```{r}
+boxplot(mpg, main = "MPG Boxplot", xlab = "MPG", col = "seagreen3", horizontal = TRUE, notch = TRUE)
+```
+
+Chebyshev's Theorem claims that at least 75% of the data are between 2 standard deviations
+```{r}
+length(mpg[abs(z) < 2]) / length(mpg)
+```
+
+As seen above with a proportion of 0.96, at least 75% of the data are between 2 standard deviations which aggrees with Chebyshev
+
+Empirical Rule
+```{r}
+
+```
+

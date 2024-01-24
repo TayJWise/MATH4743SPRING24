@@ -1,0 +1,40 @@
+---
+title: "Lab3"
+author: "Taylor Wise"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tasks
+
+## Task 1
+```{r}
+getwd()
+```
+
+## Task 2
+```{r}
+spruce <- read.csv("SPRUCE.csv")
+head(spruce)
+```
+
+## Task 3
+```{r}
+
+```
+
+
+## Task 4
+
+## Task 5
+
+## Task 6
+
+## Task 7
