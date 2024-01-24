@@ -11,7 +11,7 @@
 
 <meta name="author" content="Taylor Wise" />
 
-<meta name="date" content="2024-01-23" />
+<meta name="date" content="2024-01-24" />
 
 <title>Lab2</title>
 
@@ -1481,7 +1481,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Lab2</h1>
 <h4 class="author">Taylor Wise</h4>
-<h4 class="date">2024-01-23</h4>
+<h4 class="date">2024-01-24</h4>
 
 </div>
 
@@ -1540,9 +1540,14 @@ dotplot(mpg, col = mpgcol, main = &quot;Plot of mpg values&quot;)</code></pre>
 2 standard deviations</p>
 <pre class="r"><code>length(mpg[abs(z) &lt; 2]) / length(mpg)</code></pre>
 <pre><code>## [1] 0.96</code></pre>
-<p>As seen above with a proportion of 0.96, at least 75% of the data are
-between 2 standard deviations which aggrees with Chebyshev</p>
-<p>Empirical Rule</p>
+<p>As seen above with a proportion of 0.96, or 96%, at least 75% of the
+data are between 2 standard deviations which agrees with Chebyshev</p>
+<p>Empirical Rule claims that at least 99.7% of the data are between 3
+standard deviations</p>
+<pre class="r"><code>length(mpg[abs(z) &lt; 3]) / length(mpg)</code></pre>
+<pre><code>## [1] 0.99</code></pre>
+<p>As seen above with a proportion of 0.99,or %99, at least 99.7% of the
+data are between 3 standard deviations</p>
 </div>
 </div>
 

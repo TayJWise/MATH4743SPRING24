@@ -74,10 +74,11 @@ Chebyshev's Theorem claims that at least 75% of the data are between 2 standard 
 length(mpg[abs(z) < 2]) / length(mpg)
 ```
 
-As seen above with a proportion of 0.96, at least 75% of the data are between 2 standard deviations which aggrees with Chebyshev
+As seen above with a proportion of 0.96, or 96%, at least 75% of the data are between 2 standard deviations which agrees with Chebyshev
 
-Empirical Rule
+Empirical Rule claims that at least 99.7% of the data are between 3 standard deviations
 ```{r}
-
+length(mpg[abs(z) < 3]) / length(mpg)
 ```
 
+As seen above with a proportion of 0.99,or %99, at least 99.7% of the data are between 3 standard deviations

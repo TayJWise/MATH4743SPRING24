@@ -1,11 +1,11 @@
 Package: SPRING244753wise0054
 Type: Package
-Title: What the Package Does (Title Case)
+Title: MATH4753 Lab Function
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Taylor Wise
+Maintainer: Taylor Wise <taylor.j.wise-1@ou.edu>
+Description: This will be a package for Lab functions
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.1
