@@ -21,8 +21,7 @@ Tasks for lab 1
 Obtain the working directory
 ```{r}
 getwd()
-```
-
+``` 
 
 ## Task 2
 Read the data and obtain the first 6 lines of the data
