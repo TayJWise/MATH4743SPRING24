@@ -30,27 +30,29 @@ head(epagas)
 ## Task 3
 Make the object mpg, the number of miles per gallon vector
 ```{r}
-mpg = epagas$MPG
+mpg <- epagas$MPG
 head(mpg)
 ```
 
 Transform the mpg variable to z
 ```{r}
-z = (mpg - mean(mpg)) / sd(mpg)
+z <- (mpg - mean(mpg)) / sd(mpg)
 head(z)
 ```
 
 Verify z
 ```{r}
-
+print(paste0("Mean: ", round(mean(z), digits = 4)), quote = FALSE)
+print(paste0("Variance: ", var(z)), quote = FALSE)
+print(paste0("Standard Deviation: ", sd(z)), quote = FALSE)
 ```
 
-Possible outliers
+Possible outliers from values of mpg
 ```{r}
 mpg[abs(z) >= 2 & abs(z) <= 3]
 ```
 
-Actual outliers
+Actual outliers from values of mpg
 ```{r}
 mpg[abs(z) > 3]
 ```
@@ -60,25 +62,44 @@ Dotplot
 mpgcol = ifelse(abs(z) > 3, "red", ifelse(abs(z) >= 2 & abs(z) <= 3, "blue", "black"))
 
 library(lattice)
-dotplot(mpg, col = mpgcol, main = "Plot of mpg values")
+dotplot(mpg, col = mpgcol, main = "Dotplot of mpg values")
 ```
 
 ## Task 4
 Boxplot of mpg
 ```{r}
-boxplot(mpg, main = "MPG Boxplot", xlab = "MPG", col = "seagreen3", horizontal = TRUE, notch = TRUE)
+boxplot(mpg, main = "MPG Boxplot", xlab = "MPG", col = "black", horizontal = TRUE, notch = TRUE)
 ```
 
-Chebyshev's Theorem claims that at least 75% of the data are between 2 standard deviations
+Using Chebyshev’s theorem, predict the proportion of data within 2 standard deviations of the mean of the mpg data.
+
+Chebyshev's Theorem: 1 - k^2
+
+Let k=2,
 ```{r}
-length(mpg[abs(z) < 2]) / length(mpg)
+k=2
+chebyshev <- 1-1/(k*k)
+chebyshev
 ```
 
-As seen above with a proportion of 0.96, or 96%, at least 75% of the data are between 2 standard deviations which agrees with Chebyshev
-
-Empirical Rule claims that at least 99.7% of the data are between 3 standard deviations
+Chebyshev's Theorem claims that at least 75%, or 3/4, of the data will be between 2 standard deviations of the mean
 ```{r}
-length(mpg[abs(z) < 3]) / length(mpg)
+proportionTwo <- length(mpg[abs(z) < 2]) / length(mpg)
+proportionTwo
 ```
 
-As seen above with a proportion of 0.99,or %99, at least 99.7% of the data are between 3 standard deviations
+As seen above with a proportion of 0.96, or 96%, at least 75% of the data is within 2 standard deviations of the mean which agrees with Chebyshev
+
+Empirical Rule claims that at least 95% of the data will be between 2 standard deviations of the mean
+```{r}
+proportion2 <- length(mpg[abs(z) < 2]) / length(mpg)
+proportion2
+```
+
+As seen above with a proportion of 0.96, or 96%, at least 95% of the data is within 2 standard deviations of the mean which agrees with the Empirical Rule
+
+```{r}
+hist(mpg)
+```
+
+The empirical rule is valid in this case because the histogram of the data, as shown above, has a unimodal and symmetric distribution
