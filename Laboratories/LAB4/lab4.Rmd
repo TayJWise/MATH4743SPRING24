@@ -1,0 +1,75 @@
+---
+title: "lab4"
+author: "Taylor Wise"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tasks
+
+## Task 1
+
+### Get working directory
+```{r}
+getwd()
+```
+
+## Task 2
+
+### Reading in file
+```{r}
+spruce <- read.csv("SPRUCE.csv")
+tail(spruce)
+```
+
+## Task 3
+
+### Load library(s20x)
+```{r}
+library(s20x)
+```
+
+### Lowess smoother scatter plot
+```{r}
+trendscatter(Height~BHDiameter, data=spruce, f=0.5)
+```
+
+### Make spruce.lm
+```{r}
+spruce.lm <- with(spruce, lm(Height~BHDiameter))
+```
+
+### Find residuals
+```{r}
+height.res <- residuals(spruce.lm)
+```
+
+### Find fitted values
+```{r}
+height.fit <- fitted(spruce.lm)
+```
+
+### Plot residuals vs fitted
+```{r}
+with(spruce, plot(height.fit, height.res))
+```
+
+
+### Plot residuals vs fitted using trendscatter()
+
+## Task 4
+
+## Task 5
+
+## Task 6
+
+## Task 7
+
+## Task 8

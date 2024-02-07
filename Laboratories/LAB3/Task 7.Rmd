@@ -49,9 +49,9 @@ renderPlot({
  slr <- ggplot(spruce.df, aes(x = BHDiameter, y = Height, color = BHDiameter))
  slrOnly <- slr + geom_smooth(method = "lm") + ggtitle(input$header)
 
- pa <- slr + geom_point() 
+ pa <- slr + geom_point() + ggtitle(input$header)
  
- pjls = slr + geom_point() + geom_line() 
+ pjls = slr + geom_point() + geom_line() + ggtitle(input$header)
   
  if(input$plotg == "slr") print(slrOnly)
  
