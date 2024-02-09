@@ -61,10 +61,28 @@ height.fit <- fitted(spruce.lm)
 with(spruce, plot(height.fit, height.res))
 ```
 
-
 ### Plot residuals vs fitted using trendscatter()
+```{r}
+trendscatter(height.res~height.fit, data=spruce, f=0.5)
+```
+
+```{r}
+
+```
 
 ## Task 4
+
+### quad
+
+```{r}
+quad.lm <- lm(Height~BHDiameter + I(BHDiameter^2), data=spruce)
+```
+
+```{r}
+quadraticScatter <- with(spruce, plot(BHDiameter, Height))
+curve(quadraticScatter, lwd=2, col="red", add=TRUE)
+```
+
 
 ## Task 5
 
