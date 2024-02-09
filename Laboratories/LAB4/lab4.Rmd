@@ -66,28 +66,147 @@ with(spruce, plot(height.fit, height.res))
 trendscatter(height.res~height.fit, data=spruce, f=0.5)
 ```
 
+### Check normality
 ```{r}
-
+normcheck(spruce.lm,shapiro.wilk = TRUE)
 ```
 
 ## Task 4
 
-### quad
+### Fit a quadratic to the points
 
 ```{r}
 quad.lm <- lm(Height~BHDiameter + I(BHDiameter^2), data=spruce)
 ```
 
+### Fresh scatter plot of Height Vs BHDiameter with quadratic curve
 ```{r}
-quadraticScatter <- with(spruce, plot(BHDiameter, Height))
+with(spruce, plot(BHDiameter, Height))
+quadraticScatter <- function(x){
+  quad.lm$coef[1] + quad.lm$coef[2]*x+quad.lm$coef[3]*x^2
+}
 curve(quadraticScatter, lwd=2, col="red", add=TRUE)
 ```
 
+### Vector of fitted values
+```{r}
+quad.fit <- fitted(quad.lm)
+```
+
+### Plot of residuals vs fitted values
+```{r}
+quad.res <- residuals(quad.lm)
+with(spruce, plot(quad.fit, quad.res))
+```
 
 ## Task 5
 
+### Summarize quad.lm
+```{r}
+summary(quad.lm)
+```
+
+### Predict Height of spruce based on Diameter
+```{r}
+predict(quad.lm, data.frame(BHDiameter=c(15,18,20)))
+predict(spruce.lm, data.frame(BHDiameter=c(15,18,20)))
+```
+
+### Compare previous predictions between spruce and quad
+
+### Use anova and compare the two models
+```{r}
+anova(spruce.lm, quad.lm)
+
+anova(quad.lm)
+anova(spruce.lm)
+```
+
+### Find TSS
+```{r}
+deviations <- with(spruce, predict(spruce.lm, data.frame(BHDiameter)))
+
+TSS <- with(spruce, sum((Height - mean(Height))^2))
+TSS
+```
+
+### Find MSS
+```{r}
+MSS <- with(spruce, sum((deviations - mean(Height))^2))
+MSS
+```
+
+### Find RSS
+```{r}
+RSS <- with(spruce, sum((Height - deviations)^2))
+RSS
+```
+
+### Find value of MSS/TSS
+```{r}
+print(MSS/TSS)
+```
+
+
 ## Task 6
+```{r}
+cooks20x(quad.lm, main = "Cook's Plot of Quadratic Model")
+```
+
+```{r}
+quad2.lm <- lm(Height~BHDiameter + I(BHDiameter^2), data=spruce[-24])
+```
+
+```{r}
+summary(quad2.lm)
+```
+
+```{r}
+summary(quad.lm)
+```
 
 ## Task 7
 
+\begin{equation}
+\ B0+B1*xk = B0 + S + (B1+C)xk
+\end{equation}
+
+\begin{equation}
+\ S = -Cxk
+\end{equation}
+
+\begin{equation}
+\ y = B0 - Cxk + (B1+C)x
+\end{equation}
+
+```{r}
+sp2.df=within(spruce, X<-(BHDiameter-20)*(BHDiameter>20))
+```
+
+```{r}
+lmp <- lm(Height~BHDiameter + X,data=sp2.df)
+tmp <- summary(lmp)
+```
+
+```{r}
+myf = function(x,coef){
+  coef[1]+coef[2]*(x) + coef[3]*(x-18)*(x-18>0)
+}
+```
+
+```{r}
+plot(spruce,main="Piecewise regression")
+myf(0, coef=tmp$coefficients[,"Estimate"])
+curve(myf(x,coef=tmp$coefficients[,"Estimate"] ),add=TRUE, lwd=2,col="Blue")
+abline(v=18)
+text(18,16,paste("R sq.=",round(tmp$r.squared,4) ))
+```
+
 ## Task 8
+```{r}
+library(SPRING244753wise0054)
+
+myQuad <- SPRING244753wise0054::myquad(0)
+print(myQuad)
+```
+
