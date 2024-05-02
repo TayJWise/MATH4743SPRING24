@@ -1,6 +1,6 @@
 #' Quadratic Function
 #'
-#' @param x numberic vector
+#' @param x numeric vector
 #'
 #' @return numeric vector
 #' @export

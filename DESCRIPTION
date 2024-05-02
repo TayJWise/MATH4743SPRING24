@@ -4,8 +4,13 @@ Title: MATH4753 Lab Function
 Version: 0.1.0
 Author: Taylor Wise
 Maintainer: Taylor Wise <taylor.j.wise-1@ou.edu>
-Description: This will be a package for Lab functions
-License: What license is it under?
+Description: This will be a package for Lab functions. For class MATH4753.
+License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)

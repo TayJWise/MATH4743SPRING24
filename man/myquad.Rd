@@ -7,7 +7,7 @@
 myquad(x)
 }
 \arguments{
-\item{x}{numberic vector}
+\item{x}{numeric vector}
 }
 \value{
 numeric vector
