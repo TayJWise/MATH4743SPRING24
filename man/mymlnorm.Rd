@@ -7,19 +7,19 @@
 mymlnorm(x, mu, sig, ...)
 }
 \arguments{
-\item{x}{a value}
+\item{x}{a sample vector}
 
-\item{mu}{a value}
+\item{mu}{the mean vector}
 
-\item{sig}{a value}
+\item{sig}{the standard deviation vector}
 
-\item{...}{values}
+\item{...}{possible additions but not necessary such as lwd}
 }
 \value{
-plot and stuff
+normal distribution based on inputs
 }
 \description{
-mymlnorm
+Displays a normal distribution based on the inputs
 }
 \examples{
 mymlnorm(x=c(5,7,7,8,10),mu=seq(5,10,length=1000),sig=seq(0.1,4,length=1000),lwd=2,labcex=1)

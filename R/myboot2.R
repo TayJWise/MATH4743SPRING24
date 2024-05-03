@@ -1,17 +1,20 @@
 #' myboot2 function
 #'
+#' @description
+#' this myboot2 function will display a histogram of Bootstrap sample statistics based on the users inputs
+#'
 #' @param iter the number of iterations
 #' @param x a value
-#' @param fun a value
-#' @param alpha a value
+#' @param fun a type of functino to perform, such as mean or sd
+#' @param alpha a probability for a confidence interval
 #' @param cx a value
-#' @param ... a value
+#' @param ... possible extra addictoins
 #'
 #' @importFrom grDevices rainbow
 #' @importFrom graphics curve hist polygon text
 #' @importFrom stats dnorm pnorm qnorm runif
 #'
-#' @return a graph
+#' @return a histogram of the Bootstrap sample statistics
 #' @export
 #'
 #' @examples

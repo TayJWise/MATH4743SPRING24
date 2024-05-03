@@ -1,12 +1,18 @@
 #' Quadratic Function
 #'
-#' @param x numeric vector
+#' @description
+#' This is a basic quadratic function that will perform x^2-2x+x
 #'
-#' @return numeric vector
+#'
+#' @param x a value for x that is inputted by user
+#'
+#' @return the result of the quadratic function based on the x input
 #' @export
 #'
 #' @examples
-#' myquad(x = 1:10)
+#' myquad(x = 0)
 myquad <- function(x){
-  x^2 - 5*x + 6
+  # performs and returns this result below
+  result <- x^2-2*x+6
+  result
 }

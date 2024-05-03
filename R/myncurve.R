@@ -1,10 +1,13 @@
 #' myncurve
 #'
-#' @param mu the mean!
-#' @param sigma the standard deviation!
+#' @description
+#' Provides a visualization of a normal distribution based on input mean, sigma, and a
+#'
+#' @param mu the mean
+#' @param sigma the standard deviation
 #' @param a calculates up to x=a
 #'
-#' @return a value
+#' @return a normal distribution based on inputs
 #' @export
 #'
 #' @examples
@@ -36,7 +39,7 @@ myncurve = function(mu, sigma, a){
 
   # Area
   prob=pnorm(a,mean=mu,sd=sigma)
-  prob=round(prob,sd)
+  prob=round(prob,2)
 
   # Click to paste the text onto the graph
   text(x=a, y=dnorm(a,mu,sigma)*(1/2), paste("Area = ", prob, sep=""))

@@ -11,19 +11,19 @@ myboot2(iter = 10000, x, fun = "mean", alpha = 0.05, cx = 1.5, ...)
 
 \item{x}{a value}
 
-\item{fun}{a value}
+\item{fun}{a type of functino to perform, such as mean or sd}
 
-\item{alpha}{a value}
+\item{alpha}{a probability for a confidence interval}
 
 \item{cx}{a value}
 
-\item{...}{a value}
+\item{...}{possible extra addictoins}
 }
 \value{
-a graph
+a histogram of the Bootstrap sample statistics
 }
 \description{
-myboot2 function
+this myboot2 function will display a histogram of Bootstrap sample statistics based on the users inputs
 }
 \examples{
 myboot2(x=rnorm( 20,mean=3,sd=2))

@@ -7,13 +7,13 @@
 mysample(n, iter = 10, time = 0.5)
 }
 \arguments{
-\item{n, iter, time}{numeric values}
+\item{n, iter, time}{numeric values of size, iterations, and time}
 }
 \value{
-distributions
+a random sample
 }
 \description{
-mysample
+Makes a random sample
 }
 \examples{
 mysample()

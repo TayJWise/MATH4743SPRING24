@@ -1,11 +1,15 @@
 #' myclt Function
 #'
-#' @param n a value
-#' @param iter a value
-#' @param a a value
-#' @param b a value
+#' @description
+#' This function will display a distribution of the sum of uniforms
 #'
-#' @return the result of myclt
+#'
+#' @param n the base value used for sum of uniforms
+#' @param iter the number of iterations the function will perform
+#' @param a the left endmost point
+#' @param b the right endmost point
+#'
+#' @return the result of myclt which is a distribution of the sum of uniforms
 #'
 #' @importFrom grDevices rainbow
 #' @importFrom graphics curve hist polygon text

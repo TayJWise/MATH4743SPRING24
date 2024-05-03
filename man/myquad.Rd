@@ -7,14 +7,14 @@
 myquad(x)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{a value for x that is inputted by user}
 }
 \value{
-numeric vector
+the result of the quadratic function based on the x input
 }
 \description{
-Quadratic Function
+This is a basic quadratic function that will perform x^2-2x+x
 }
 \examples{
-myquad(x = 1:10)
+myquad(x = 0)
 }

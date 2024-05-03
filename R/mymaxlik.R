@@ -1,8 +1,12 @@
 #' mymaxlik function
 #'
-#' @param x val
+#' @description
+#' Originally was the mymaxlik function, decided to go with another function to
+#' read into R so this is just a placeholder for if I had used it
 #'
-#' @return stuff
+#' @param x a value
+#'
+#' @return value
 #' @export
 #'
 #' @examples

@@ -4,23 +4,18 @@
 \alias{mymaxlik}
 \title{mymaxlik function}
 \usage{
-mymaxlik(lfun, x, param, ...)
+mymaxlik(x)
 }
 \arguments{
-\item{lfun}{val}
-
-\item{x}{val}
-
-\item{param}{val}
-
-\item{...}{vals}
+\item{x}{a value}
 }
 \value{
-stuff
+value
 }
 \description{
-mymaxlik function
+Originally was the mymaxlik function, decided to go with another function to
+read into R so this is just a placeholder for if I had used it
 }
 \examples{
-mymaxlik(x=c(9,9,1,9,9,9),param=seq(0,1,length=1000),lfun=logbin,xlab=expression(pi),main="Binomial",cex.main=2)
+mymaxlik(x=3)
 }

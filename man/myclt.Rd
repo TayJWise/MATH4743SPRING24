@@ -7,19 +7,19 @@
 myclt(n, iter, a = 0, b = 5)
 }
 \arguments{
-\item{n}{a value}
+\item{n}{the base value used for sum of uniforms}
 
-\item{iter}{a value}
+\item{iter}{the number of iterations the function will perform}
 
-\item{a}{a value}
+\item{a}{the left endmost point}
 
-\item{b}{a value}
+\item{b}{the right endmost point}
 }
 \value{
-the result of myclt
+the result of myclt which is a distribution of the sum of uniforms
 }
 \description{
-myclt Function
+This function will display a distribution of the sum of uniforms
 }
 \examples{
 w=myclt(n=50,iter=10000,a=5,b=10) # D

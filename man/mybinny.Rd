@@ -7,17 +7,17 @@
 mybinny(iter, n, p)
 }
 \arguments{
-\item{iter}{a value}
+\item{iter}{number of iterations}
 
-\item{n}{a value}
+\item{n}{a size inputted by user}
 
-\item{p}{a value}
+\item{p}{a probability}
 }
 \value{
 table of mybin
 }
 \description{
-mybin function for table
+Displays a table of mybin based on the user inputting iteration, size of n, and probability
 }
 \examples{
 mybinny(iter=1, n=10, p=0.7)

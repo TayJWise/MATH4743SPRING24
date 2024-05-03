@@ -1,11 +1,14 @@
 #' mymlnorm
 #'
-#' @param x a value
-#' @param mu a value
-#' @param sig a value
-#' @param ... values
+#'@description
+#' Displays a normal distribution based on the inputs
 #'
-#' @return plot and stuff
+#' @param x a sample vector
+#' @param mu the mean vector
+#' @param sig the standard deviation vector
+#' @param ... possible additions but not necessary such as lwd
+#'
+#' @return normal distribution based on inputs
 #' @export
 #'
 #' @importFrom graphics axis contour points

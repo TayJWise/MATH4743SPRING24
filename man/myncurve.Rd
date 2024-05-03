@@ -7,17 +7,17 @@
 myncurve(mu, sigma, a)
 }
 \arguments{
-\item{mu}{the mean!}
+\item{mu}{the mean}
 
-\item{sigma}{the standard deviation!}
+\item{sigma}{the standard deviation}
 
 \item{a}{calculates up to x=a}
 }
 \value{
-a value
+a normal distribution based on inputs
 }
 \description{
-myncurve
+Provides a visualization of a normal distribution based on input mean, sigma, and a
 }
 \examples{
 myncurve(mu=10, sigma=4, a=25)

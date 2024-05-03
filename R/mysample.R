@@ -1,8 +1,12 @@
 #' mysample
 #'
-#' @param n,iter,time numeric values
+#' @description
+#' Makes a random sample
 #'
-#' @return distributions
+#'
+#' @param n,iter,time numeric values of size, iterations, and time
+#'
+#' @return a random sample
 #' @export
 #'
 #' @examples
